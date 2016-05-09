@@ -22,12 +22,20 @@ body{
     width: 1200px;
   }
 }
+
+.header{
+	border-bottom: 1px solid #fbfbfb;
+}
+
 .top {
 	height: 110px;
-	background-color: rgb(26,26,26);
+	background-color: #151515;
+	border-bottom: 1px solid #000;
 }
 
 .menu {
 	height: 60px;
-	background-color: #f8ac38;
+	background-color: #f8bb49;
+	border-top: solid 1px #fcdda4;
+	border-bottom: solid 1px #a16013;
 }
