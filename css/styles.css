@@ -41,3 +41,13 @@ body{
 	border-top: solid 1px #fcdda4;
 	border-bottom: solid 1px #a16013;
 }
+
+.menu > * {
+	margin: 0;
+	padding: 0;
+}
+
+.menu > div > menu > * {
+	float: left;
+	padding-right: 50px;
+}
