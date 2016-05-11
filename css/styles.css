@@ -1,3 +1,8 @@
+@font-face {
+	font-family: MyriadPro;
+	src: url(../fonts/MyriadPro-Regular.otf);
+}
+
 body{
 	margin: 0px;
 }
@@ -6,6 +11,7 @@ body{
   padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
+  background: #f00;
 }
 @media (min-width: 768px) {
   .container {
@@ -34,7 +40,7 @@ body{
 	border-bottom: 1px solid #000;
 }
 
-.menu {
+.menu-wrapper {
 	height: 60px;
 	background: #f8bb49;
 	background: linear-gradient(to bottom, #f8bb49, #f7941d);
@@ -47,7 +53,14 @@ body{
 	padding: 0;
 }
 
-.menu > div > menu > * {
+.menu > ul > li {
 	float: left;
 	padding-right: 50px;
+}
+
+.menu > ul > li > a {
+	text-decoration: none;
+	color: #333333;
+	font-family: MyriadPro, arial;
+	font-size: 12px;
 }
