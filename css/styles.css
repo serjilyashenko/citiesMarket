@@ -11,7 +11,6 @@ body{
   padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
-  background: #f00;
 }
 @media (min-width: 768px) {
   .container {
@@ -48,19 +47,34 @@ body{
 	border-bottom: solid 1px #a16013;
 }
 
-.menu > * {
-	margin: 0;
-	padding: 0;
+.menu {
+	padding: 0px;
+	height: 30px;
+}
+
+.menu > ul {
+	padding: 0px;
+	margin-top: 19px;
+	overflow: hidden;
 }
 
 .menu > ul > li {
 	float: left;
-	padding-right: 50px;
+	padding-right: 37px;
+	padding-left: 13px;
 }
 
-.menu > ul > li > a {
+.tab > a {
 	text-decoration: none;
 	color: #333333;
 	font-family: MyriadPro, arial;
 	font-size: 12px;
+}
+
+.active {
+	background: #0f0900;
+}
+
+.active a {
+	color: #ff9d00;
 }
