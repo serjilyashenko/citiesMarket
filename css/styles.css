@@ -51,7 +51,7 @@ body{
 .menu {
 	padding: 0px;
 	margin: 0px;
-	margin-top: 7px;
+	margin-top: 10px;
 }
 
 .menu > ul {
@@ -63,11 +63,12 @@ body{
 .menu > ul > li {
 	float: left;
 	padding-right: 37px;
-	padding-top: 11px;
-	padding-bottom: 11px;
+/*	padding-top: 11px;*/
+/*	padding-bottom: 11px;*/
 }
 
 .tab > a {
+	display: block;
 	padding-left: 13px;
 	padding-right: 13px;
 	padding-top: 11px;
