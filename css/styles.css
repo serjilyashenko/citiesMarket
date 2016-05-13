@@ -55,6 +55,7 @@ body{
 }
 
 .menu > ul {
+	list-style-type: none;
 	overflow: hidden;
 	padding: 0px;
 	margin: 0px;
@@ -69,6 +70,7 @@ body{
 
 .tab > a {
 	display: block;
+	text-transform: uppercase;
 	padding-left: 13px;
 	padding-right: 13px;
 	padding-top: 11px;
