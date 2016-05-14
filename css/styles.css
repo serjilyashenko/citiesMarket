@@ -41,7 +41,7 @@ body{
 }
 
 .menu-wrapper {
-	height: 60px;
+	min-height: 60px;
 	background: #f8bb49;
 	background: linear-gradient(to bottom, #f8bb49, #f7941d);
 	border-top: solid 1px #fcdda4;
