@@ -3,8 +3,9 @@
 	src: url(../fonts/MyriadPro-Regular.otf);
 }
 
-body{
+html,body{
 	margin: 0px;
+	height: 100%;
 }
 .container {
   padding-right: 20px;
@@ -33,6 +34,17 @@ body{
 	border-bottom: 1px solid #fbfbfb;
 }
 
+.headercontent {
+	height: 100%;
+}
+
+.content {
+/*	min-height: 100%;*/
+	box-sizing: border-box;
+	padding-bottom: 44px;
+}
+
+
 .top, .footer {
 	height: 110px;
 	background-color: #151515;
@@ -41,7 +53,8 @@ body{
 }
 
 .footer {
-	height: auto;
+	margin-top: -45px;
+	height: 44px;
 }
 
 .menu-wrapper {
@@ -92,14 +105,10 @@ body{
 }
 
 .paginator {
-    margin-left: 36px;
-    padding-left: 88px;
+    margin-left: 0px;
+    padding-left: 0px;
     padding-right: 40px;
     overflow: hidden;
-}
-
-.paginator > div {
-    float: left;
 }
 
 .paginator > div {
