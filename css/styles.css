@@ -35,13 +35,13 @@ html,body{
 }
 
 .headercontent {
-	height: 100%;
+	min-height: 100%;
 }
 
 .content {
-/*	min-height: 100%;*/
 	box-sizing: border-box;
 	padding-bottom: 44px;
+/*	overflow: hidden;*/
 }
 
 
@@ -150,4 +150,12 @@ html,body{
 
 .pagecontainer .active {
     background-color: rgb(129, 126, 126);
+}
+
+.element {
+	height: 50px;
+	width: 100%;
+	background-color: #fff0f0;
+	margin: 5px;
+/*	float: left;*/
 }
