@@ -47,7 +47,7 @@ $(document).ready(function () {
                 cont.css('left',(cont.offset().left - lastItem.offset().left - lastItem.width() - 10 + contWrap.width()) + "px");
     };
 	var showPaginator = function(){
-		var dataLength = 500;
+		var dataLength = 500 ;
 		$(".paginator .pagecontainer").empty();
         for(var i = 0; i < (dataLength/maxCarsOnPage); i++){
             var container = $(".paginator .pagecontainer").append("<div>" + (i + 1) + "</div>");
