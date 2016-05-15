@@ -102,6 +102,10 @@ html,body{
 	font-size: 12px;
 }
 
+div {
+	font-family: MyriadPro, arial;
+}
+
 .active a {
 	color: #ff9d00;
 	background: #0f0900;
@@ -156,13 +160,21 @@ html,body{
     background-color: rgb(129, 126, 126);
 }
 
-.element img {
-/*	float: left;*/
+.cityImage {
+	float: left;
 }
 
-.cityImage {
+.cityImage img {
 	margin-bottom: 10px;
 	height: 100px;
 	width: 100px;
 	border: 1px solid black;
+}
+
+.cityDescripts {
+	margin-left: 125px;
+}
+
+.cityDesctipt {
+	margin-bottom: 5px;
 }
