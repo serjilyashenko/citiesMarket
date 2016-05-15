@@ -156,16 +156,12 @@ html,body{
     background-color: rgb(129, 126, 126);
 }
 
-.element {
-	height: 50px;
-	width: 100%;
-	background-color: #fff0f0;
-	margin: 5px;
+.element img {
 /*	float: left;*/
 }
 
 .cityImage {
-	margin: 5px;
+	margin-bottom: 10px;
 	height: 100px;
 	width: 100px;
 	border: 1px solid black;

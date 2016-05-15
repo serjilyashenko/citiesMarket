@@ -73,7 +73,7 @@ $(document).ready(function () {
 
 	var showSome = function(){
 		citiesData.forEach(function(item){
-			$(".content").append("<div><img class='cityImage' src=" + item.image + "></div>");
+			$(".content").append("<div class='element'><img class='cityImage' src=" + item.image + "><span>" + item.name + "</span></div>");
 		});
 	};
 	//end content actions
