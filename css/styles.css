@@ -43,6 +43,8 @@ html,body{
 .content {
 	box-sizing: border-box;
 	padding-bottom: 44px;
+	padding-left: 0px;
+	margin-top: 12px;
 /*	overflow: hidden;*/
 }
 
@@ -160,4 +162,11 @@ html,body{
 	background-color: #fff0f0;
 	margin: 5px;
 /*	float: left;*/
+}
+
+.cityImage {
+	margin: 5px;
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
 }

@@ -1,7 +1,8 @@
 $(document).ready(function () {
 	console.log("Hello Cities Market");
 
-	var maxCarsOnPage = 10;
+	var citiesData = {};
+	var maxItemsOnPage = 10;
 
 	// tabs actions
 	$('.tab').on('click', function () {
@@ -49,24 +50,32 @@ $(document).ready(function () {
 	var showPaginator = function(){
 		var dataLength = 500 ;
 		$(".paginator .pagecontainer").empty();
-        for(var i = 0; i < (dataLength/maxCarsOnPage); i++){
+        for(var i = 0; i < (dataLength/maxItemsOnPage); i++){
             var container = $(".paginator .pagecontainer").append("<div>" + (i + 1) + "</div>");
             var item = $(".paginator .pagecontainer :last-child");
             item.addClass(i.toString());
             if(i == 0) item.addClass("active");
 			$(".pagecontainer_wrap").width( $(".pagecontainer_wrap").width() + 30 );
         };
-	} // end of showPaginator
+	}; // end of showPaginator
 	// End of Footer actions
 
 	//Content actions
 	var refreshData = function(){
 		var data = {};
 		$.post('./backend/refreshData.php', data, function(response){
-			console.dir(response);
+			citiesData = response;
+			showPaginator();
+			showSome();
+		}, 'json');
+
+	};
+
+	var showSome = function(){
+		citiesData.forEach(function(item){
+			$(".content").append("<div><img class='cityImage' src=" + item.image + "></div>");
 		});
-		showPaginator();
-	}
+	};
 	//end content actions
 
 	refreshData();
