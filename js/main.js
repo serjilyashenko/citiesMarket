@@ -61,8 +61,9 @@ $(document).ready(function () {
 
 	//Content actions
 	var refreshData = function(){
-		$.post('.backend/refreshData.php', data, function(response){
-			console.log("data resived");
+		var data = {};
+		$.post('./backend/refreshData.php', data, function(response){
+			console.dir(response);
 		});
 		showPaginator();
 	}
