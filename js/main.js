@@ -13,6 +13,7 @@ $(document).ready(function () {
 		console.log(selectedItem.siblings());
 		console.log("Filter: Selected " + tabsPosition + " tab; Search Method = " + tabsMethod);
     });
+	// end tabs action
 
     // Footer actions
     $(".paginator .prev").on('click', function(){
@@ -33,7 +34,6 @@ $(document).ready(function () {
             shiftPagContainer(shift - 20);
             firstCarIndex = newActiveNumber * maxCarsOnPage;
     });
- 	// End of Footer actions
 
     // showPaginator - showing and listening of page buttons of paginator
     var shiftPagContainer = function(shift){
@@ -57,6 +57,16 @@ $(document).ready(function () {
 			$(".pagecontainer_wrap").width( $(".pagecontainer_wrap").width() + 30 );
         };
 	} // end of showPaginator
+	// End of Footer actions
 
-	showPaginator();
+	//Content actions
+	var refreshData = function(){
+		$.post('.backend/refreshData.php', data, function(response){
+			console.log("data resived");
+		});
+		showPaginator();
+	}
+	//end content actions
+
+	refreshData();
 });
