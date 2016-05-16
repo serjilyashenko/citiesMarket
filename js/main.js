@@ -2,6 +2,7 @@ $(document).ready(function () {
 	console.log("Hello Cities Market");
 
 	var citiesData = {};
+	var firstCityNum = 0;
 	var maxItemsOnPage = 10;
 
 	// tabs actions
@@ -33,7 +34,8 @@ $(document).ready(function () {
             var shift = targetPosition - activeItem.offset().left;
             activeItem.addClass("active");
             shiftPagContainer(shift - 20);
-            firstCarIndex = newActiveNumber * maxCarsOnPage;
+            firstCityNum = newActiveNumber * maxItemsOnPage;
+			showSome();
     });
 
     // showPaginator - showing and listening of page buttons of paginator
@@ -72,7 +74,11 @@ $(document).ready(function () {
 	};
 
 	var showSome = function(){
-		citiesData.forEach(function(item){
+		$('.content').empty();
+		var bufy = citiesData.slice(firstCityNum, firstCityNum + maxItemsOnPage);
+//		console.log(firstCityNum + "  " + (maxItemsOnPage + firstCityNum));
+		console.log(bufy);
+		bufy.forEach(function(item){
 			var template = '<div class="element">\
 								<div class="cityImage"><img src="' + item.image + '" alt=""></div>\
 								<div class="cityDescripts">\
