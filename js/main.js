@@ -73,7 +73,18 @@ $(document).ready(function () {
 
 	var showSome = function(){
 		citiesData.forEach(function(item){
-			$(".content").append("<div class='element'><img class='cityImage' src=" + item.image + "><span>" + item.name + "</span></div>");
+			var template = '<div class="element">\
+								<div class="cityImage"><img src="' + item.image + '" alt=""></div>\
+								<div class="cityDescripts">\
+								<div class="cityDesctipt cityNumber">Город номр: ' + item.num + '</div>\
+								<div class="cityDesctipt cityName">Имя: ' + item.name + '</div>\
+								<div class="cityDesctipt cityYear">Год: ' + item.year + '</div>\
+								<div class="cityDesctipt cityPopulation">Население: ' + item.population + '</div>\
+							</div>\
+							</div>\
+							<div style="clear: left"></div>\
+							';
+			$(".content").append(template);
 		});
 	};
 	//end content actions
