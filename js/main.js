@@ -65,9 +65,10 @@ $(document).ready(function () {
 	//Content actions
 	var refreshData = function(){
 		var data = {
-			"param1": "var1",
-			"param2": "var2",
-			"param3": "var3"
+			"populationMin": 100,
+			"populationMax": 20000000,
+			"yearMin": 0,
+			"yearMax": 2016
 		};
 		$.post('./backend/refreshData.php', data, function(response){
 			citiesData = response;
