@@ -1,57 +1,31 @@
 <?php
 
 // Checking of input data
+
+function checkInData($paramName, $default, $min, $max){
+ 	if(isset($_POST[$paramName])){
+ 		$res = $_POST[$paramName];
+//	if(true){
+//		$res = $paramName;
+		if((is_numeric($res)) and ($res > $min) and ($res < $max)){
+			return $res;
+		};
+	};
+	return $default;
+};
+
 $populationMinDefault = 100;
-if(isset($_POST["populationMin"])){
-	$populationMin = $_POST["populationMin"];
-	if(!is_numeric($populationMin)){
-		$populationMin = $populationMinDefault;
-	};
-	if($populationMin < $populationMinDefault){
-		$populationMin = $populationMinDefault;
-	};
-}else{
-	$populationMin = $populationMinDefault;
-};
-
 $populationMaxDefault = 25000000;
-if(isset($_POST["populationMax"])){
-	$populationMax = $_POST["populationMax"];
-	if(!is_numeric($populationMax)){
-		$populationMax = $populationMaxDefault;
-	};
-	if($populationMax > $populationMaxDefault){
-		$populationMax = $populationMaxDefault;
-	};
-}else{
-	$populationMax = $populationMaxDefault;
-};
-
 $yearMinDefault = 0;
-if(isset($_POST["yearMin"])){
-	$yearMin = $_POST["yearMin"];
-	if(!is_numeric($yearMin)){
-		$yearMin = $yearMinDefault;
-	};
-	if($yearMin < $yearMinDefault){
-		$yearMin = $yearMinDefault;
-	};
-}else{
-	$yearMin = $yearMinDefault;
-};
-
-$yearMaxDefault = 2017;
-if(isset($_POST["yearMax"])){
-	$yearMax = $_POST["yearMax"];
-	if(!is_numeric($yearMax)){
-		$yearMax = $yearMaxDefault;
-	};
-	if($yearMax < $yearMaxDefault){
-		$yearMax = $yearMaxDefault;
-	};
-}else{
-	$yearMax = $yearMaxDefault;
-};
+$yearMaxDefault = 2016;
+$populationMin = checkInData("populationMin", 100, 100, $populationMaxDefault);
+$populationMax = checkInData("populationMax", $populationMaxDefault, $populationMin, $populationMaxDefault);
+$yearMin = checkInData("yearMin", $yearMinDefault, $yearMinDefault, $yearMaxDefault);
+$yearMax = checkInData("yearMax", $yearMaxDefault, $yearMin, $yearMaxDefault);
+//$populationMin = checkInData(500, 100, 100, $populationMaxDefault);
+//$populationMax = checkInData(300, $populationMaxDefault, $populationMin, $populationMaxDefault);
+//$yearMin = checkInData(1500, $yearMinDefault, $yearMinDefault, $yearMaxDefault);
+//$yearMax = checkInData(500, $yearMaxDefault, $yearMin, $yearMaxDefault);
 // End of checking of input data
 
 
@@ -62,7 +36,10 @@ $res = array();
 $count = 1000;
 for($i = 1; $i <= $count; $i++){
 	$res[] = array(
-		"massage" => $message,
+		"message1" => $populationMin,
+		"message2" => $populationMax,
+		"message3" => $yearMin,
+		"message4" => $yearMax,
 		"num" => $i,
 		"name" => "city $i",
 		"year" => rand(0, 2016),
