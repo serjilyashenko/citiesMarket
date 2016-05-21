@@ -64,7 +64,11 @@ $(document).ready(function () {
 
 	//Content actions
 	var refreshData = function(){
-		var data = {};
+		var data = {
+			"param1": "var1",
+			"param2": "var2",
+			"param3": "var3"
+		};
 		$.post('./backend/refreshData.php', data, function(response){
 			citiesData = response;
 			showPaginator();
@@ -77,7 +81,7 @@ $(document).ready(function () {
 		$('.content').empty();
 		var bufy = citiesData.slice(firstCityNum, firstCityNum + maxItemsOnPage);
 //		console.log(firstCityNum + "  " + (maxItemsOnPage + firstCityNum));
-		console.log(bufy);
+		// console.log(bufy);
 		bufy.forEach(function(item){
 			var template = '<div class="element">\
 								<div class="cityImage"><img src="' + item.image + '" alt=""></div>\
