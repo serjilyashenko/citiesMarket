@@ -7,7 +7,7 @@ function checkInData($paramName, $default, $min, $max){
  		$res = $_POST[$paramName];
 //	if(true){
 //		$res = $paramName;
-		if((is_numeric($res)) and ($res > $min) and ($res < $max)){
+		if((is_numeric($res)) and ($res >= $min) and ($res <= $max)){
 			return $res;
 		};
 	};

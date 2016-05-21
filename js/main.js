@@ -65,9 +65,9 @@ $(document).ready(function () {
 	//Content actions
 	var refreshData = function(){
 		var data = {
-			"populationMin": 100,
+			"populationMin": 20000000,
 			"populationMax": 20000000,
-			"yearMin": 0,
+			"yearMin": 2014,
 			"yearMax": 2016
 		};
 		$.post('./backend/refreshData.php', data, function(response){
