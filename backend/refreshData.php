@@ -1,8 +1,9 @@
 <?php
 
-//$param1 = $_POST["param1"];
-//$param2 = $_POST["param2"];
-//$param3 = $_POST["param3"];
+$populationMin 	= $_POST["populationMin"];
+$populationMax 	= $_POST["populationMax"];
+$yearMin 	   	= $_POST["yearMin"];
+$yearMax		= $_POST["yearMax"];
 
 $continents = array("евразия", "северная америка", "южная америка", "африка", "автралия", "атнарктида");
 
@@ -12,8 +13,8 @@ for($i = 1; $i <= $count; $i++){
 	$res[] = array(
 		"num" => $i,
 		"name" => "city $i",
-		"year" => rand(1500, 2016),
-		"population" => rand(100, 100000),
+		"year" => rand(0, 2016),
+		"population" => rand(100, 10000000),
 		"continent" => $continents[rand(0, 4)],
 		"image" => "http://lorempixel.com/150/150/city/" . rand(1, 10)
 	);
