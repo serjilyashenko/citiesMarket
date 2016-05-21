@@ -42,8 +42,8 @@ for($i = 1; $i <= $count; $i++){
 		"message4" => $yearMax,
 		"num" => $i,
 		"name" => "city $i",
-		"year" => rand(0, 2016),
-		"population" => rand(100, 10000000),
+		"year" => rand($yearMin, $yearMax),
+		"population" => rand($populationMin, $populationMax),
 		"continent" => $continents[rand(0, 4)],
 		"image" => "http://lorempixel.com/150/150/city/" . rand(1, 10),
 	);
