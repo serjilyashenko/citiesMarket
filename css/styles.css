@@ -73,6 +73,7 @@ html,body{
 	padding: 0px;
 	margin: 0px;
 	margin-top: 10px;
+	font-size: 21px;
 }
 
 .menu > ul {
@@ -202,8 +203,8 @@ div {
 .title {
 	color: white;
 	margin-left: 0px;
-	margin-top: 9px;
-	font-size: 40px;
+	margin-top: 12px;
+	font-size: 35px;
 	float: left;
 }
 
@@ -211,6 +212,47 @@ div {
 	color: white;
 /*	background-color: white;*/
 	margin-top: 15px;
-	margin-left: 524px;
-	border: 1px solid white;
+	margin-left: 44px;
+	margin-bottom: 12px;
+/*	border: 1px solid white;*/
+	font-size: 15px;
+	min-width: 500px;
+	float: left;
+}
+
+.yearForm {
+	float: left;
+}
+
+.formWrapper {
+	overflow: hidden;
+}
+
+.formTittle {
+	margin-bottom: 6px;
+}
+
+.formParamTittle {
+	float: left;
+	width: 18px;
+}
+
+.formInput {
+	margin-left: 3px;
+	max-width: 89px;
+	height: 16px;
+	background: #f8bb49;
+	background: linear-gradient(to bottom, rgb(242, 205, 135), rgb(244, 179, 102));
+}
+
+.formCol {
+	margin-right: 20px;
+}
+
+.populationForm {
+	margin-left: 232px;;
+}
+
+.formInputWrapper {
+	padding-top: 5px;
 }
