@@ -182,3 +182,17 @@ div {
 .element {
 /*	overflow: hidden;*/
 }
+
+.logo {
+	margin-right: 25px;
+	color: aliceblue;
+	float: left;
+}
+
+.top_wrapper {
+	margin-top: 45px;
+}
+
+.title {
+	color: white;
+}
