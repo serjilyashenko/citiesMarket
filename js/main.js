@@ -85,7 +85,7 @@ $(document).ready(function () {
 		// console.log(bufy);
 		bufy.forEach(function(item){
 			var template = '<div class="element">\
-								<div class="cityImage"><img src="' + item.image + '" alt=""></div>\
+								<div class="cityImage"><img src="' + /* item.image +*/ '" alt=""></div>\
 								<div class="cityDescripts">\
 								<div class="cityDesctipt cityNumber">Город номр: ' + item.num + '</div>\
 								<div class="cityDesctipt cityName">Имя: ' + item.name + '</div>\

@@ -238,6 +238,8 @@ div {
 }
 
 .formInput {
+	color: white;
+	font-family:  MyriadPro, arial;
 	margin-left: 3px;
 	max-width: 89px;
 	height: 16px;
