@@ -9,11 +9,11 @@ $(document).ready(function () {
 	$('.tab').on('click', function () {
 		var selectedItem = $(this);
 		var tabsPosition = selectedItem.index();
-		tabsMethod = selectedItem.data('class');
+		tabsMethod = selectedItem.data('method');
 		selectedItem.addClass('active');
 		selectedItem.siblings().removeClass('active');
-		console.log(selectedItem.siblings());
-		console.log("Filter: Selected " + tabsPosition + " tab; Search Method = " + tabsMethod);
+		// console.log(selectedItem.siblings());
+		// console.log("Filter: Selected " + tabsPosition + " tab; Filtration Method = " + tabsMethod);
     });
 	// end tabs action
 
