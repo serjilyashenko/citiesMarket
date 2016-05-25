@@ -262,3 +262,7 @@ div {
 .unVisibleSubmit {
 	display: none;
 }
+
+.continetFields {
+	text-transform: capitalize;
+}
