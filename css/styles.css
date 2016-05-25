@@ -258,3 +258,7 @@ div {
 .formInputWrapper {
 	padding-top: 5px;
 }
+
+.unVisibleSubmit {
+	display: none;
+}
