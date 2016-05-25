@@ -32,14 +32,18 @@ $yearMax = checkInData("yearMax", $yearMaxDefault, $yearMin, $yearMaxDefault);
 // Random server answer
 $continents = array("евразия", "северная америка", "южная америка", "африка", "автралия", "атнарктида");
 
-$res = array();
+$res = array(
+	"meta" => array(
+		"populationMin" => $populationMin,
+		"populationMax" => $populationMax,
+		"yearMin" => $yearMin,
+		"yearMax" => $yearMax,
+	),
+	"items" => array()
+);
 $count = 1000;
 for($i = 1; $i <= $count; $i++){
-	$res[] = array(
-		"message1" => $populationMin,
-		"message2" => $populationMax,
-		"message3" => $yearMin,
-		"message4" => $yearMax,
+	$res["items"][] = array(
 		"num" => $i,
 		"name" => "city $i",
 		"year" => rand($yearMin, $yearMax),

@@ -65,10 +65,10 @@ $(document).ready(function () {
 	//Content actions
 	var refreshData = function(){
 		var data = {
-			"populationMin": 20000000,
-			"populationMax": 20000000,
-			"yearMin": 2014,
-			"yearMax": 2016
+			"populationMin": $("input[name='populationMin']").val(),
+			"populationMax": $("input[name='populationMax']").val(),
+			"yearMin": $("input[name='yearMin']").val(),
+			"yearMax": $("input[name='yearMax']").val()
 		};
 		$.post('./backend/refreshData.php', data, function(response){
 			citiesData = response;
@@ -80,10 +80,13 @@ $(document).ready(function () {
 
 	var showSome = function(){
 		$('.content').empty();
-		var bufy = citiesData.slice(firstCityNum, firstCityNum + maxItemsOnPage);
-//		console.log(firstCityNum + "  " + (maxItemsOnPage + firstCityNum));
-		// console.log(bufy);
-		bufy.forEach(function(item){
+		$("input[name='populationMin']").val(citiesData.meta.populationMin);
+		$("input[name='populationMax']").val(citiesData.meta.populationMax);
+		$("input[name='yearMin']").val(citiesData.meta.yearMin);
+		$("input[name='yearMax']").val(citiesData.meta.yearMax);
+		var items = citiesData.items.slice(firstCityNum, firstCityNum + maxItemsOnPage);
+		// console.log(items);
+		items.forEach(function(item){
 			var template = '<div class="element">\
 								<div class="cityImage"><img src="' + /* item.image +*/ '" alt=""></div>\
 								<div class="cityDescripts">\
@@ -99,6 +102,11 @@ $(document).ready(function () {
 		});
 	};
 	//end content actions
+
+	$('#searchForm').submit(function(event){
+		event.preventDefault();
+		refreshData();
+	});
 
 	refreshData();
 });
