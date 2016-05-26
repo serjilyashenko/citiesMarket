@@ -1,7 +1,9 @@
 $(document).ready(function () {
 	console.log("Hello Cities Market");
 
+	var tabsMethod = "все";
 	var citiesData = {};
+	var filtredData = {};
 	var firstCityNum = 0;
 	var maxItemsOnPage = 10;
 
@@ -10,10 +12,16 @@ $(document).ready(function () {
 		var selectedItem = $(this);
 		var tabsPosition = selectedItem.index();
 		tabsMethod = selectedItem.data('method');
+		var selectedItem;
 		selectedItem.addClass('active');
 		selectedItem.siblings().removeClass('active');
 		// console.log(selectedItem.siblings());
 		// console.log("Filter: Selected " + tabsPosition + " tab; Filtration Method = " + tabsMethod);
+		// console.dir(filterData(citiesData));
+		filtredData = filterData(citiesData, tabsMethod);
+		console.dir(filtredData);
+		showPaginator(filtredData);
+		showSome(filtredData);
     });
 	// end tabs action
 
@@ -35,7 +43,7 @@ $(document).ready(function () {
             activeItem.addClass("active");
             shiftPagContainer(shift - 20);
             firstCityNum = newActiveNumber * maxItemsOnPage;
-			showSome();
+			showSome(filtredData);
     });
 
     // showPaginator - showing and listening of page buttons of paginator
@@ -49,8 +57,8 @@ $(document).ready(function () {
             if(lastItem.offset().left + lastItem.width() + shift < contWrap.offset().left + contWrap.width())
                 cont.css('left',(cont.offset().left - lastItem.offset().left - lastItem.width() - 10 + contWrap.width()) + "px");
     };
-	var showPaginator = function(){
-		var dataLength = 500 ;
+	var showPaginator = function(items){
+		var dataLength = items.length;
 		$(".paginator .pagecontainer").empty();
         for(var i = 0; i < (dataLength/maxItemsOnPage); i++){
             var container = $(".paginator .pagecontainer").append("<div>" + (i + 1) + "</div>");
@@ -72,34 +80,45 @@ $(document).ready(function () {
 		};
 		$.post('./backend/refreshData.php', data, function(response){
 			citiesData = response;
-			showPaginator();
-			showSome();
+			filtredData = filterData(citiesData, tabsMethod);
+			showPaginator(filtredData);
+			showSome(filtredData);
 		}, 'json');
 
 	};
 
-	var showSome = function(){
+	var filterData = function(citiesData, tabsMethod){
+		if(tabsMethod === "все"){
+			return citiesData.items;
+		};
+		var filteredData = citiesData.items.filter(function(item){
+			return (item.continent === tabsMethod);
+		});
+		return filteredData;
+	};
+
+	var showSome = function(filtredData){
 		$('.content').empty();
 		$("input[name='populationMin']").val(citiesData.meta.populationMin);
 		$("input[name='populationMax']").val(citiesData.meta.populationMax);
 		$("input[name='yearMin']").val(citiesData.meta.yearMin);
 		$("input[name='yearMax']").val(citiesData.meta.yearMax);
-		var items = citiesData.items.slice(firstCityNum, firstCityNum + maxItemsOnPage);
+		var items = filtredData.slice(firstCityNum, firstCityNum + maxItemsOnPage);
 		// console.log(items);
 		items.forEach(function(item){
-			var template = '<div class="element">\
-								<div class="cityImage"><img src="' + /* item.image +*/ '" alt=""></div>\
-								<div class="cityDescripts">\
-								<div class="cityDescript cityNumber">Город номр: ' + item.num + '</div>\
-								<div class="cityDescript cityName">Имя: ' + item.name + '</div>\
-								<div class"cityDescript cityContinent"> Континент: <span class="continetFields">' + item.continent + '</span></div>\
-								<div class="cityDescript cityYear">Год: ' + item.year + '</div>\
-								<div class="cityDescript cityPopulation">Население: ' + item.population + '</div>\
-							</div>\
-							</div>\
-							<div style="clear: left"></div>\
-							';
-			$(".content").append(template);
+				var template = '<div class="element">\
+									<div class="cityImage"><img src="' +  item.image + '" alt=""></div>\
+									<div class="cityDescripts">\
+									<div class="cityDescript cityNumber">Город номр: ' + item.num + '</div>\
+									<div class="cityDescript cityName">Имя: ' + item.name + '</div>\
+									<div class"cityDescript cityContinent"> Континент: <span class="continetFields">' + item.continent + '</span></div>\
+									<div class="cityDescript cityYear">Год: ' + item.year + '</div>\
+									<div class="cityDescript cityPopulation">Население: ' + item.population + '</div>\
+								</div>\
+								</div>\
+								<div style="clear: left"></div>\
+								';
+				$(".content").append(template);
 		});
 	};
 	//end content actions
