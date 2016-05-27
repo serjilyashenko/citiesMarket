@@ -6,6 +6,7 @@
 html,body{
 	margin: 0px;
 	height: 100%;
+	min-width: 484px;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 }
@@ -198,6 +199,7 @@ div {
 .top_wrapper {
 /*	margin-top: 45px;*/
 	overflow: hidden;
+	float: left;
 }
 
 .title {
@@ -261,4 +263,14 @@ div {
 
 .unVisibleSubmit {
 	display: none;
+}
+
+@media (max-width: 992px){
+	.menu > ul > li {
+		float: none;
+		padding-right: 113px;
+	}
+	.searchForm{
+		margin-left: 0px;
+	}
 }
