@@ -45,7 +45,7 @@ $count = 1000;
 for($i = 1; $i <= $count; $i++){
 	$res["items"][] = array(
 		"num" => $i,
-		"name" => "city $i",
+		"name" => "Город $i",
 		"year" => rand($yearMin, $yearMax),
 		"population" => rand($populationMin, $populationMax),
 		"continent" => $continents[rand(0, 4)],

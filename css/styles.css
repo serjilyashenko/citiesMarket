@@ -105,7 +105,7 @@ div {
 
 .active a {
 	color: #ff9d00;
-	background: #0f0900;
+	background: #151515;
 	border-radius: 5px;
 }
 
@@ -182,12 +182,16 @@ div {
 
 .logo {
 	margin-right: 28px;
-	margin-top: 14px;
+	margin-top: 9px;
 	color: black;
-	background-color: white;
-	float: left;
+/*	background-color: white;*/
 	border: 1px solid white;
-	height: 81px;
+	float: left;
+	height: 91px;
+	width: 91px;
+}
+.logo>img{
+	height: 91px;
 	width: 91px;
 }
 
