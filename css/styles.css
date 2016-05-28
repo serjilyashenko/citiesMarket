@@ -259,7 +259,6 @@ div {
 .unVisibleSubmit {
 	display: none;
 }
-
 @media (max-width: 992px){
 	.menu > ul > li {
 		float: none;
@@ -289,4 +288,7 @@ div {
 	.menu-wrapper:hover .tab {
 		display: block;
 	}
+}
+.continetFields {
+	text-transform: capitalize;
 }

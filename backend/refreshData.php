@@ -30,7 +30,7 @@ $yearMax = checkInData("yearMax", $yearMaxDefault, $yearMin, $yearMaxDefault);
 
 
 // Random server answer
-$continents = array("евразия", "северная америка", "южная америка", "африка", "автралия", "атнарктида");
+$continents = array("евразия", "северная америка", "южная америка", "африка", "авcтралия", "антарктида");
 
 $res = array(
 	"meta" => array(
