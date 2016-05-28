@@ -6,7 +6,7 @@
 html,body{
 	margin: 0px;
 	height: 100%;
-	min-width: 484px;
+	min-width: 600px;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 }
@@ -16,11 +16,6 @@ html,body{
   margin-right: auto;
   margin-left: auto;
   overflow: hidden;
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
 }
 @media (min-width: 992px) {
   .container {
@@ -272,5 +267,23 @@ div {
 	}
 	.searchForm{
 		margin-left: 0px;
+	}
+	.container{
+		padding-left: 9%;
+	}
+	.populationForm {
+		margin-left: 304px;
+	}
+	.searchForm {
+		margin-top: 34px;
+	}
+	.menu {
+		width: 530px;
+	}
+	.tab {
+		display: none;
+	}
+	.tab.active {
+		display: block;
 	}
 }
