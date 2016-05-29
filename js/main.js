@@ -109,14 +109,14 @@ $(document).ready(function () {
 				var template = '<div class="element">\
 									<div class="cityImage"><img src="' +  item.image + '" alt=""></div>\
 									<div class="cityDescripts">\
-									<div class="cityDescript cityNumber">Город номр: ' + item.num + '</div>\
-									<div class="cityDescript cityName">Имя: ' + item.name + '</div>\
-									<div class"cityDescript cityContinent"> Континент: <span class="continetFields">' + item.continent + '</span></div>\
-									<div class="cityDescript cityYear">Год: ' + item.year + '</div>\
-									<div class="cityDescript cityPopulation">Население: ' + item.population + '</div>\
+										<div class="cityDescript cityNumber">Город номр: ' + item.num + '</div>\
+										<div class="cityDescript cityName">Имя: ' + item.name + '</div>\
+										<div class"cityDescript cityContinent"> Континент: <span class="continetFields">' + item.continent + '</span></div>\
+										<div class="cityDescript cityYear">Год: ' + item.year + '</div>\
+										<div class="cityDescript cityPopulation">Население: ' + item.population + '</div>\
+									</div>\
+									<div style="clear: left"></div>\
 								</div>\
-								</div>\
-								<div style="clear: left"></div>\
 								';
 				$(".content").append(template);
 		});
