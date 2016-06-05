@@ -1,11 +1,11 @@
 # citiesMarket
 
-## tabs on jQuery
+## > tabs on jQuery
 
-## front-end filtration
+## > front-end filtration
 
-## pagination
+## > pagination
 
-## back-end lorem ipsum on php
+## > back-end lorem ipsum on php
 
-## responsive
+## > responsive
